@@ -8,6 +8,7 @@
             "sSearch": "Axtar:",
             "info": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoEmpty": "Ümumi qeydiyyat sayı: _TOTAL_",
+            "infoFiltered": "",
             "emptyTable": "Data mövcud deyil"
         },
         "lengthChange": false,
@@ -25,6 +26,7 @@ $(document).ready(function () {
             "sSearch": "Axtar:",
             "info": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoEmpty": "Ümumi qeydiyyat sayı: _TOTAL_",
+            "infoFiltered": "",
             "emptyTable": "Data mövcud deyil"
         },
         "lengthChange": false,
