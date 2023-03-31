@@ -9,7 +9,7 @@ namespace AspNetCoreMvc.Repositories.Abstract
         List<SelectListItem> SelectCategoryItems();
         void Add(Product product);
         void Update(Product product);
-        void Delete(int id);
+        void Delete(Product product);
         Product GetProductById(int id);
     }
 }

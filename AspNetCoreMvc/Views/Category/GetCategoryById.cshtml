@@ -3,16 +3,17 @@
     ViewData["Title"] = "GetCategoryById";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
-{
-    <b>Kateqoriya ID</b>
-    @Html.TextBoxFor(c=>c.CategoryId, new { @class = "form-control", @readonly="readonly" })
-    <b>Kateqoriya Adı</b>
-    @Html.TextBoxFor(c=>c.CategoryName, new { @class = "form-control" })
-    @ViewData["ValidationResults"]
-    <br />
-    <button class="btn btn-info" style="width:120px">Yadda Saxla</button>
-    <a href="/Category/Index" class="btn btn-danger" style="width:120px">İmtina Et</a>
-}
+<div class="container">
+    @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+    {
+        <b>Kateqoriya ID</b>
+        @Html.TextBoxFor(c=>c.CategoryId, new { @class = "form-control", @readonly="readonly" })
+        <b>Kateqoriya Adı</b>
+        @Html.TextBoxFor(c=>c.CategoryName, new { @class = "form-control" })
+        <span class="alert-danger">@ViewData["ValidationResults"]</span>
+        <br />
+        <button class="btn btn-info" style="width:120px">Yadda Saxla</button>
+        <a href="/Category/Index" class="btn btn-danger" style="width:120px">İmtina Et</a>
+    }
+</div>
 

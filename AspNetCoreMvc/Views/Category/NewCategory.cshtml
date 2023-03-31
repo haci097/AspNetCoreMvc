@@ -5,14 +5,14 @@
 }
 
 <div class="container">
-@using (Html.BeginForm("NewCategory", "Category", FormMethod.Post))
-{
-    <b>Kateqoriya Adı</b>
-    @Html.TextBoxFor(c=>c.CategoryName, new { @class = "form-control" })
-    @ViewData["ValidationResults"]
-    <br />
-    <button class="btn btn-info" style="width:120px">Yadda Saxla</button>
-    <a href="/Category/Index" class="btn btn-danger" style="width:120px">İmtina Et</a>
-}
+    @using (Html.BeginForm("NewCategory", "Category", FormMethod.Post))
+    {
+        <b>Kateqoriya Adı</b>
+        @Html.TextBoxFor(c=>c.CategoryName, new { @class = "form-control" })
+        <span class="alert-danger">@ViewData["ValidationResults"]</span>
+        <br />
+        <button class="btn btn-info" style="width:120px">Yadda Saxla</button>
+        <a href="/Category/Index" class="btn btn-danger" style="width:120px">İmtina Et</a>
+    }
 </div>
 

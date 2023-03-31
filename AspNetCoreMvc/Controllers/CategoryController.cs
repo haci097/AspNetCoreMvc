@@ -38,6 +38,7 @@ namespace AspNetCoreMvc.Controllers
             if (validationResult.IsValid)
             {
                 _categoryRepository.Add(category);
+                TempData["notification"] = Notification.BasicNotification("Kateqoriya uğurla əlavə olundu", NotificationType.Success);
                 return RedirectToAction("Index");
             }
             else
@@ -64,8 +65,8 @@ namespace AspNetCoreMvc.Controllers
             try
             {
                 _categoryRepository.Delete(category);
-                TempData["notification"] = Notification.BasicNotification("Məhsul uğurla əlavə silindi", NotificationType.Success);
-                FileLogger.Log("DeleteCategory", "Kateqoriya silindi. CategoryId= " + category.CategoryId);
+                TempData["notification"] = Notification.BasicNotification("Kateqoriya uğurla silindi", NotificationType.Success);
+                FileLogger.Log("DeleteCategory", "Kateqoriya silindi. CategoryId = " + category.CategoryId);
             }
             catch (Exception ex)
             {
@@ -87,8 +88,24 @@ namespace AspNetCoreMvc.Controllers
         {
             var updatedCategory = _categoryRepository.GetCategoryById(category.CategoryId);
             updatedCategory.CategoryName = category.CategoryName;
-            _categoryRepository.Update(updatedCategory);
-            return RedirectToAction("Index");
+
+            var validationResult = _validator.Validate(category);
+
+            if (validationResult.IsValid)
+            {
+                _categoryRepository.Update(updatedCategory);
+                TempData["notification"] = Notification.BasicNotification("Kateqoriya uğurla redaktə edildi", NotificationType.Success);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ViewData["ValidationResults"] = item.ErrorMessage;
+                }
+            }
+
+            return View("GetCategoryById");
         }
 
         [HttpGet]

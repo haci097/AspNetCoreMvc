@@ -1,0 +1,25 @@
+﻿@model AspNetCoreMvc.Models.ProductDetailDto
+
+<div class="modal fade" id="DeleteProduct-@Model.ProductId" aria-labelledby="DeleteProductLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="DeleteProductLabel">Xəbərdarlıq</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="DeleteProduct" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input type="hidden" asp-for="ProductId" />
+                        <p>@Model.ProductName məhsulunu silmək istədiyinizə əminsinizmi?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Xeyr</button>
+                        <button type="submit" class="btn btn-primary">Bəli</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

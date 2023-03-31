@@ -15,11 +15,10 @@ namespace AspNetCoreMvc.Repositories.Concrete
             }
         }
 
-        public void Delete(int id)
+        public void Delete(Product product)
         {
             using(Context context = new Context())
             {
-                var product = context.Products.Find(id);
                 context.Products.Remove(product);
                 context.SaveChanges();  
             }
