@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Northwind</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+<script src="~/lib/datatables/js/jquery.datatables.min.js"></script>
+<script src="~/sweetalert2/sweetalert2.min.js"></script>
+<link href="~/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+
+<body onload="startTime()">
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-indigo w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">NWPro</h3>
+        <a href="/Home/Index/" class="w3-bar-item w3-button">Məhsullar</a>
+        <a href="/Category/Index/" class="w3-bar-item w3-button">Kateqoriyalar</a>
+        <a href="#" class="w3-bar-item w3-button">Sifariş Detalları</a>
+        <a href="/Statistic/Index" class="w3-bar-item w3-button">Statistikalar</a>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#LogOut" class="w3-bar-item w3-button">Sistemdən Çıxış</button>
+    </div>
+    @await Html.PartialAsync("_LogOutPartial")
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+        <div class="w3-container w3-indigo">
+            <div style="display: flex; justify-content: flex-end">
+                   <b><div id="txt"></div></b>
+            </div>
+        </div>
+        <br />
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("Scripts", required: false)
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = "İstifadəçi: @User.Identity.Name, Saat: " + h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.CountOfProducts</h4>
+                    <p class="card-text">Ümumi Məhsul Sayı</p>
+                    <a href="/Home/Index" class="btn btn-primary">Ətraflı</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.CountOfCategories</h4>
+                    <p class="card-text">Ümumi Kateqoriya Sayı</p>
+                    <a href="/Category/Index" class="btn btn-primary">Ətraflı</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.CountOfOrders</h4>
+                    <p class="card-text">Ümumi Sifariş Sayı</p>
+                    <a href="#" class="btn btn-primary">Ətraflı</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.CountOfCustomers</h4>
+                    <p class="card-text">Ümumi Müştəri Sayı</p>
+                    <a href="#" class="btn btn-primary">Ətralı</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

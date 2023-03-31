@@ -1,0 +1,27 @@
+﻿@model AspNetCoreMvc.Models.Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "Home", FormMethod.Post))
+{
+    <b>Product Id</b>
+    @Html.TextBoxFor(p=>p.ProductId, new { @class = "form-control" })
+    <b>Product Name</b>
+    @Html.TextBoxFor(p=>p.ProductName, new { @class = "form-control" })
+    <br />
+    <b>Category List</b>
+    @Html.DropDownListFor(p=>p.CategoryId, (List<SelectListItem>)ViewBag.v1, "Kateqoriya Seçin", new { @class = "form-control" })
+    <br />
+    <b>Units in Stock</b>
+    @Html.TextBoxFor(p=>p.UnitsInStock, new { @class = "form-control", @type = "number" })
+    <br />
+    <b>Unit Price</b>
+    @Html.TextBoxFor(p=>p.UnitPrice, new { @class = "form-control", @type = "number" })
+    <br />
+    <button class="btn btn-info" style="width:120px">Update</button>
+    <a href="/Home/Index" class="btn btn-danger" style="width:120px">Cancel</a>
+}
+
+
