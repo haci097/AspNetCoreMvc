@@ -7,16 +7,44 @@
       "destination": "wwwroot/lib/datatables/"
     },
     {
-      "library": "datatable@2.0.2",
-      "destination": "wwwroot/datatable/"
-    },
-    {
       "library": "sweetalert2@11.7.2",
       "destination": "wwwroot/sweetalert2/"
     },
     {
       "library": "bootstrap@5.2.3",
       "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "datatables.net-buttons-bs@2.3.6",
+      "destination": "wwwroot/lib/datatables.net-buttons-bs/"
+    },
+    {
+      "library": "datatables.net-buttons-bs5@2.3.6",
+      "destination": "wwwroot/lib/datatables.net-buttons-bs5/"
+    },
+    {
+      "library": "datatables.net-buttons-bs4@2.3.6",
+      "destination": "wwwroot/lib/datatables.net-buttons-bs4/"
+    },
+    {
+      "library": "datatables-colvis@1.1.2",
+      "destination": "wwwroot/lib/datatables-colvis/"
+    },
+    {
+      "library": "datatables-buttons@2.3.6",
+      "destination": "wwwroot/lib/datatables-buttons/"
+    },
+    {
+      "library": "datatables.net-buttons@2.3.6",
+      "destination": "wwwroot/lib/datatables.net-buttons/"
+    },
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "datatable@2.0.2",
+      "destination": "wwwroot/lib/datatable/"
     }
   ]
 }

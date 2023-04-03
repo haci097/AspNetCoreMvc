@@ -23,6 +23,9 @@ namespace AspNetCoreMvc.Controllers
                 var countOfCustomers = context.Customers.Count();
                 ViewBag.CountOfCustomers = countOfCustomers;
 
+                var countOfOrderDetails = context.OrderDetails.Count();
+                ViewBag.CountOfOrderDetails = countOfOrderDetails;
+
                 return View();
             }
         }

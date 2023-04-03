@@ -9,10 +9,16 @@
             "info": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoEmpty": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoFiltered": "",
-            "emptyTable": "Data mövcud deyil"
+            "emptyTable": "Data mövcud deyil",
+            "zeroRecords": "Axtarışa uyğun qeydiyyat tapılmadı"
         },
-        "lengthChange": false,
-
+        dom: 'Bfrtip',
+        buttons: [
+            'pdf',
+            'excel',
+            { extend: 'print', text: 'Çap Et' }
+        ],
+        "lengthChange": false
     });
 });
 
@@ -27,9 +33,15 @@ $(document).ready(function () {
             "info": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoEmpty": "Ümumi qeydiyyat sayı: _TOTAL_",
             "infoFiltered": "",
-            "emptyTable": "Data mövcud deyil"
+            "emptyTable": "Data mövcud deyil",
+            "zeroRecords": "Axtarışa uyğun qeydiyyat tapılmadı"
         },
-        "lengthChange": false,
-
+        dom: 'Bfrtip',
+        buttons: [
+            'pdf',
+            'excel',
+            { extend: 'print', text: 'Çap Et' }
+        ],
+        "lengthChange": false
     });
 });
